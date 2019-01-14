@@ -1,2 +1,2 @@
 # UsefulShellScripts
-Some useful Shell scripts
+A collection of simple but useful bash scripts
