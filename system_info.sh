@@ -17,36 +17,36 @@
 
 # VARIABLE ASSIGNMENT
 # Show hostname:
-HOST=$(hostname)
+host=$(hostname)
 # User executing the script:
-CURRENTUSER=$(whoami)
+currentuser=$(whoami)
 #Logged-in users:
-USERSLOGGED=$(who)
+userslogged=$(who)
 # Current date:
-CURRENTDATE=$(date +%F)
+currentdate=$(date +%F)
 # Host IP address:
-IPADDRESS=$(hostname -I | cut -d ' ' -f1)
+ipaddress=$(hostname -I | cut -d ' ' -f1)
 #File System Disk Space Usage
-DISKSPACEUSAGE=$(df -h)
+diskspaceusage=$(df -h)
 #Free and used Memory
-FREEMEM=$(free)
+freemem=$(free)
 #System uptime and load:
-UPTIME=$(uptime)
+Uptime=$(uptime)
 #Top 5 processes as far as memory usage is concerned
-TOP5MEM=$(ps -eo %mem,%cpu,comm --sort=-%mem | head -n 6)
+top5mem=$(ps -eo %mem,%cpu,comm --sort=-%mem | head -n 6)
 
 
 
 # SHOW MESSAGES
-echo "Today is $CURRENTDATE"
-echo "Hostname: $HOST ($IPADDRESS)"
-echo "User info for $CURRENTUSER:"
-grep $CURRENTUSER /etc/passwd
-echo "Users logged in: $USERSLOGGED "
-echo "Disk Space usage is: $DISKSPACEUSAGE"
-echo "Free and used Memory in the System is: $FREEMEM"
-echo "System uptime and load is:$UPTIME"
-echo "Top 5 processes as far as memory usage is concerned: $TOP5MEM"
+echo "Today is $currentdate"
+echo "Hostname: $host ($ipaddress)"
+echo "User info for $currentuser:"
+grep $currentuser /etc/passwd
+echo "Users logged in: $userslogged "
+echo "Disk Space usage is: $diskspaceusage"
+echo "Free and used Memory in the System is: $freemem"
+echo "System uptime and load is:$Uptime"
+echo "Top 5 processes as far as memory usage is concerned: $top5mem"
 
 
 #End systeminfo script
