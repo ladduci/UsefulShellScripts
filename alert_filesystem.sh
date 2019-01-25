@@ -15,16 +15,16 @@
 # ======================================================================
 # 
 echo -e "\e[4;32mCHECKING FILE SYSTEM USAGE\e[0m"
-THRESHOLD=30
+threshold=30
 while read line; do
         # This variable stores the file system path as a string
-        FILESYSTEM=$(echo $line | awk '{print $1}')
+        filesystem=$(echo $line | awk '{print $1}')
         # This variable stores the use percentage (XX%)
-        PERCENTAGE=$(echo $line | awk '{print $5}')
+        percentageE=$(echo $line | awk '{print $5}')
         # Use percentage without the % sign.
-        USAGE=${PERCENTAGE%?}
-        if [ $USAGE -gt $THRESHOLD ]; then
-                echo "The remaining available space in $FILESYSTEM is critically low. Used: $PERCENTAGE"
+        usage=${percentage%?}
+        if [ $usage -gt $threshold ]; then
+                echo "The remaining available space in $filesystem is critically low. Used: $percentage"
         fi
 done < <(df -h --total | grep -vi filesystem)
 #######################################################################################################
