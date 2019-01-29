@@ -8,3 +8,7 @@ A collection of simple but useful bash scripts
 - 2 alert_filesystem.sh
 
     Alert when file system usage surpasses a defined limit
+    
+ - 3 collect.bash
+    
+     Collects useful info from different servers using ssh 
